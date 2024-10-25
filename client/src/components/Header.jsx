@@ -27,9 +27,9 @@ export const Header = () => {
   };
   console.log(showInput);
   return (
-    <div className={`border w-full relative  `}>
+    <div className={`border w-full relative shadow-sm `}>
       <div
-        className={`w-[90%] sm:w-4/5 mx-auto flex flex-row justify-between items-center py-2 shadow-sm`}
+        className={`w-[90%] sm:w-4/5 mx-auto flex flex-row justify-between items-center py-2 `}
       >
         {/* logo */}
         <div className=" flex gap-2 items-center">
