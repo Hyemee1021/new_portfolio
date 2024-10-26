@@ -50,18 +50,18 @@ export const Header = () => {
             placeholder="Search.."
           />
         </div>
-        <div className="hidden md:block">
+        <div className="hidden sm:block">
           <ul className="flex gap-5 items-center ">
             <li>Home</li>
             <li>About</li>
             <li>Projects</li>
           </ul>
         </div>
-        <div className="md:hidden">
+        <div className="sm:hidden">
           <IoMenuSharp className="cursor-pointer" onClick={toggleMenu} />
         </div>
         {showMenu && (
-          <div className="w-[50%] bg-slate-50 absolute top-[100%] right-0 shadow-md">
+          <div className="w-[50%] bg-slate-50 absolute top-[100%] right-0 shadow-lg">
             <ul className="flex flex-col  w-[50%] bg-slate-50 min-h-full py-5 gap-5 items-center  mx-auto">
               <li className="cursor-pointer">Home</li>
               <li lassName="cursor-pointer">About</li>
