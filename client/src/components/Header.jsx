@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 // icons
 import { AiOutlineSearch } from "react-icons/ai";
 import { FaMoon, FaSun } from "react-icons/fa";
 import { IoMenuSharp } from "react-icons/io5";
-
+import { IoMdClose } from "react-icons/io";
 // redux
 import { useDispatch, useSelector } from "react-redux";
 import { toggleLight } from "../store.js";
@@ -15,9 +15,8 @@ export const Header = () => {
   const light = useSelector((state) => state.light.value);
 
   const toggleMode = () => {
-    dispatch(toggleLight(light));
+    dispatch(toggleLight(!light));
   };
-  console.log("light" + light);
 
   const toggleInput = () => {
     setShowInput(!showInput);
@@ -25,9 +24,13 @@ export const Header = () => {
   const toggleMenu = () => {
     setShowMenu(!showMenu);
   };
-  console.log(showInput);
+  const closeMenu = () => {
+    setShowMenu(false);
+  };
   return (
-    <div className={`border w-full relative shadow-sm `}>
+    <div
+      className={`border w-full shadow-sm z-50 bg-gray-50 sticky top-0 left-0 `}
+    >
       <div
         className={`w-[90%] sm:w-4/5 mx-auto flex flex-row justify-between items-center py-2 `}
       >
@@ -62,10 +65,17 @@ export const Header = () => {
         </div>
         {showMenu && (
           <div className="w-[50%] bg-slate-50 absolute top-[100%] right-0 shadow-lg">
+            <div className="pl-2 pt-2">
+              <IoMdClose
+                onClick={closeMenu}
+                className="cursor-pointer"
+                size={20}
+              />
+            </div>
             <ul className="flex flex-col  w-[50%] bg-slate-50 min-h-full py-5 gap-5 items-center  mx-auto">
               <li className="cursor-pointer">Home</li>
-              <li lassName="cursor-pointer">About</li>
-              <li lassName="cursor-pointer">Projects</li>
+              <li className="cursor-pointer">About</li>
+              <li className="cursor-pointer">Projects</li>
             </ul>
           </div>
         )}
