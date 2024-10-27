@@ -21,14 +21,21 @@ export const Home = () => {
     <div className="w-[90%] mx-auto">
       {/* intro */}
       <div className="my-20">
-        <h1 className="font-bold  text-3xl">Welcome to my Blog</h1>
+        <h1 className="font-bold  text-3xl">
+          Welcome to{" "}
+          <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-xl text-white font-bold text-xl py-1 px-2 ">
+            Hyemee's
+          </span>{" "}
+          space
+        </h1>
         <p className="my-10 text-sm">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis
-          excepturi impedit itaque cum! Unde cum illum quasi. Natus ducimus
-          beatae maxime minus, soluta quibusdam culpa a, aut excepturi id qui.
+          This is my space to showcase my projects and share highlights from my
+          development journey. From responsive designs to interactive
+          interfaces, each project reflects my dedication to building
+          user-friendly and visually appealing web experiences.
         </p>
         <button
-          className="font-semibold text-sm text-pink-600"
+          className="font-semibold text-sm text-pink-600 hover:text-purple-600"
           onClick={handleDownloadClick}
         >
           My Resume
