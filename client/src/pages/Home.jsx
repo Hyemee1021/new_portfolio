@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+// project images
 import projectImg from "../assets/project7.png";
+import projectImg2 from "../assets/project5.png";
 import HyeMeePark from "../assets/hyemeePark.pdf";
 
 import { ProjectBox } from "../components/ProjectBox";
@@ -39,16 +41,18 @@ export const Home = () => {
           {/* Using ProjectBox components */}
           <ProjectBox
             projectName="NeighborMC"
-            projectDescription="React, Node.js, Tailwind.css"
+            projectDescription="Mongodb, NodeJS, React ,React-bootstrap, HTML"
             projectImg={projectImg}
+            projectUrl="https://medical-center-frontend-delta.vercel.app/"
           />
 
           {/* 2 */}
           {/* Using ProjectBox components */}
           <ProjectBox
-            projectName="NeighborMC"
-            projectDescription="React, Node.js, Tailwind.css"
-            projectImg={projectImg}
+            projectName="Travel Management"
+            projectDescription="Mongodb, NodeJS, React ,React-bootstrap, HTML"
+            projectImg={projectImg2}
+            projectUrl="https://tour-manager-frontend.vercel.app/home"
           />
         </div>
       </div>
