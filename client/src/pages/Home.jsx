@@ -1,16 +1,20 @@
 import React, { useState } from "react";
 import projectImg from "../assets/project7.png";
+import HyeMeePark from "../assets/hyemeePark.pdf";
+
+import { ProjectBox } from "../components/ProjectBox";
 export const Home = () => {
-  const [showDiv, setShowDiv] = useState(false);
-
-  console.log(showDiv);
-
   const handleMouseEnter = () => {
     setShowDiv(true);
   };
   const handleMouseLeave = () => {
     setShowDiv(false);
   };
+
+  const handleDownloadClick = () => {
+    window.open(HyeMeePark, "_blank");
+  };
+
   return (
     <div className="w-[90%] mx-auto">
       {/* intro */}
@@ -21,43 +25,31 @@ export const Home = () => {
           excepturi impedit itaque cum! Unde cum illum quasi. Natus ducimus
           beatae maxime minus, soluta quibusdam culpa a, aut excepturi id qui.
         </p>
-        <button className="font-semibold text-sm text-pink-500">
+        <button
+          className="font-semibold text-sm text-pink-600"
+          onClick={handleDownloadClick}
+        >
           My Resume
         </button>
       </div>
       {/* project */}
-      <div className="mx-auto flex flex-col sm:flex-row items-center justify-center">
+      <div className="mx-auto flex flex-col items-center justify-center">
         <h1 className="font-bold  text-2xl my-10">My Projects</h1>
-        <div className="flex flex-col sm:flex-row">
-          {/* project box */}
-          <div
-            className="rounded-md bg-white shadow-md overflow-hidden transition duration-300"
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-          >
-            <div className=" relative overflow-hidden">
-              <img
-                src={projectImg}
-                alt=""
-                className={`rounded-md transition-transform  duration-300 ease-in-out ${
-                  showDiv ? "scale-110" : "scale-100"
-                }`}
-              />
-            </div>
-            <div className="my-8 w-[90%] mx-auto ">
-              <h2 className="font-semibold">NeighborMC</h2>
-              <p className="text-sm my-3">React, Node.js, Tailwind.css</p>
-              {showDiv && (
-                <button
-                  className={`text-pink-600 hover:text-purple-600  text-sm font-semibold transition-opacity ease-in-out duration-500 ${
-                    showDiv ? "opacity-100" : "opacity-0"
-                  }`}
-                >
-                  Visit
-                </button>
-              )}
-            </div>
-          </div>
+        <div className="flex flex-col sm:flex-row gap-8">
+          {/* Using ProjectBox components */}
+          <ProjectBox
+            projectName="NeighborMC"
+            projectDescription="React, Node.js, Tailwind.css"
+            projectImg={projectImg}
+          />
+
+          {/* 2 */}
+          {/* Using ProjectBox components */}
+          <ProjectBox
+            projectName="NeighborMC"
+            projectDescription="React, Node.js, Tailwind.css"
+            projectImg={projectImg}
+          />
         </div>
       </div>
     </div>
