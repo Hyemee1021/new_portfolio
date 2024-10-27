@@ -10,7 +10,7 @@ import { toggleLight } from "../store.js";
 export const Header = () => {
   const [showInput, setShowInput] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
-
+  // redux
   const dispatch = useDispatch();
   const light = useSelector((state) => state.light.value);
 
@@ -29,7 +29,9 @@ export const Header = () => {
   };
   return (
     <div
-      className={`border w-full shadow-sm z-50 bg-gray-50 sticky top-0 left-0 `}
+      className={`border w-full shadow-sm z-50  sticky top-0 left-0 ${
+        light ? "bg-gray-50" : "bg-gray-900"
+      }`}
     >
       <div
         className={`w-[90%] sm:w-4/5 mx-auto flex flex-row justify-between items-center py-2 `}

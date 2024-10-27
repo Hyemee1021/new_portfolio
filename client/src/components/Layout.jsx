@@ -9,7 +9,7 @@ export const Layout = () => {
   return (
     <div
       className={`w-full mx-auto ${
-        light ? "bg-slate-50 text-gray-500" : "bg-slate-800 text-white"
+        light ? "bg-slate-50 text-gray-500" : "bg-gray-800 text-white"
       }`}
     >
       <Header />

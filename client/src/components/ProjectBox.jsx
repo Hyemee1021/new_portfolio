@@ -18,9 +18,9 @@ export const ProjectBox = ({ projectName, projectDescription, projectImg }) => {
   };
   return (
     <div
-      className={`rounded-md shadow-md overflow-hidden transition-transform ease-in-out duration-300 flex-1 ${
+      className={`rounded-md shadow-md overflow-hidden border-whi  transition-transform ease-in-out duration-300 flex-1 ${
         showDiv ? "border-pink-300 border-2" : ""
-      } ${theme ? "bg-white " : "bg-slate-700"}`}
+      } ${theme ? "bg-white " : "bg-gray-900"}`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
